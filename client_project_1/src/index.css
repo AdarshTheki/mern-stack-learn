@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: '#3CA0F2';
+    --secondary: '#29759f';
+    --primary-light: '#61c6ff';
+    --black-dark: '#212529';
+    --gray-dark: '#232d30';
+    --gray-light: '#474749';
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* small text in checkbox */
+.text-small {
+    color: #666;
+    font-size: 10px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Offer Zoom-In & Zoom-Out */
+.offerAnimation {
+    animation: offerAnimation 2.5s linear infinite;
+}
+@keyframes offerAnimation {
+    50% {
+        scale: 0.7;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+/* section title with bottom border */
+.section-title {
+    font-size: 30px;
+    color: #3ca0f2;
+    font-weight: 600;
+    text-align: center;
+    margin: 0px 0px 30px;
+    padding: 10px;
+    position: relative;
+}
+.section-title::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #a39d9d;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #3ca0f2;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+/* slider effect*/
+.slick-slider .slick-prev {
+    left: 10px;
+    z-index: 20;
+    scale: 1.5;
+}
+.slick-slider .slick-next {
+    right: 10px;
+    z-index: 20;
+    scale: 1.5;
+}
+
+.amenities_p {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    background-image: linear-gradient(45deg, black, transparent);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    border-left: 4px solid #3ca0f2;
+    padding-left: 5px;
+    text-align: left;
+}
