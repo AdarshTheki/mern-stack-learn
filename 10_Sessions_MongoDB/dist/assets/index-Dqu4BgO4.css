@@ -1,0 +1,1 @@
+body{max-width:800px;padding:10px;margin:auto}h1{font-size:calc(16px + 2vw)}h2{font-size:calc(16px + 1.2vw)}li{padding:5px}input,button{padding:.5rem 1rem;border-radius:5px;border:1px solid #111;outline:none;cursor:pointer}button{cursor:pointer}form{display:flex;flex-direction:column;gap:14px;justify-content:start;align-items:start}
