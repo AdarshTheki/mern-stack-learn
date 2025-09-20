@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
+# How different state management in React:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **useState**
+- **useContext**
+- **Simple Redux (manual setup)**
+- **Redux Toolkit (@reduxjs/toolkit)**
+- **Zustand**
 
-Currently, two official plugins are available:
+## ⚖️ When to Use What?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **useState** → Local UI state (form inputs, toggles)
+2. **useContext** → Small apps, global theme/auth state
+3. **Redux (classic)** → Large apps, complex business logic (legacy projects)
+4. **Redux Toolkit** → Large/modern apps with middleware needs
+5. **Zustand** → Medium apps, simpler global state (alternative to Redux)
 
-## Expanding the ESLint configuration
+## Functionality
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Add Item** \
+   You can add a new task to your todo list by entering the task description and clicking the "Add" button.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Delete Item** \
+   You can delete a task from the list by clicking the "Delete" button next to the task.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Update Item** \
+   You can update the description of a task by clicking the "Edit" button and making changes to the task.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. **Mark as Active** \
+   You can mark a task as active by clicking the "Mark as Active" button. Active tasks are displayed with a different style to distinguish them from completed tasks.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+5. **Mark as Complete** \
+   You can mark a task as complete by clicking the "Mark as Complete" button. Completed tasks are displayed with a strike-through style.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+6. **Search Item** \
+   You can search for tasks by entering a search query in the search bar. The app will filter and display tasks that match the search query.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Components
+
+The app consists of the following components:
+
+- **[TodoApp]()** (Main Component)
+- **[TodoList]()** (Displays the list of tasks)
+- **[TodoItem]()** (Individual task item)
+- **[TodoForm]()** (Form for adding and updating tasks)
+- **[SearchBar]()** (Search functionality)
+
+## Getting Started
+
+To run this Todo App in your local development environment, follow these steps:
+
+1. Clone the repository `https://github.com/AdarshTheki/mern-stack-learn.git`.
+2. Navigate to the project directory `/02_State_Managment`.
+3. Install dependencies using `npm install`.
+4. Start the development server using `npm run dev`.
+
+## Additional Features (Optional)
+
+You can enhance this Todo App by adding features like sorting tasks, setting due dates, or categorizing tasks into different lists.
+
+Happy coding!
